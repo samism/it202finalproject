@@ -1,5 +1,7 @@
 # it202finalproject
 
+By Sameer Ismail and Andrew Martin.
+
 Screens:
 
 main - this displays the software that are available 
