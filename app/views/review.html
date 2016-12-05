@@ -1,0 +1,66 @@
+<div class="row review-page">
+   <div class="col-lg-4">
+      <h1>{{ review.meta.reviewerName }}</h1> for <strong>{{ software.meta.fullName }}</strong> on <date>{{ review.meta.reviewDate | date:fullDate }}</date>
+      <br><br>
+      <img ng-src="{{ software.meta.image }}" alt="" class="thumbnail-img software-page-img">
+      
+   </div>
+   <div class="col-lg-8">
+      <div>
+         <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General</a></li>
+            <li role="presentation"><a href="#usage" aria-controls="usage" role="tab" data-toggle="tab">Usage</a></li>
+            <li role="presentation"><a href="#content" aria-controls="content" role="tab" data-toggle="tab">Content</a></li>
+            <li role="presentation"><a href="#effectiveness" aria-controls="effectiveness" role="tab" data-toggle="tab">Effectiveness</a></li>
+            <li role="presentation"><a href="#overall" aria-controls="overall" role="tab" data-toggle="tab">Overall</a></li>
+         </ul>
+         <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="general">
+               <div ng-repeat="(key, value) in review.general">
+                  <h3>{{ propertyToQuestion(key) }}</h3>
+                  <blockquote ng-if="!isRating(value)">
+                     <p>{{ interpretResponse(value) }}</p>
+                  </blockquote><br>
+                  <span uib-rating ng-if="isRating(value)" ng-model="value" max='5' readonly='true'>
+               </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="usage">
+               <div ng-repeat="(key, value) in review.usage">
+                  <h3>{{ propertyToQuestion(key) }}</h3>
+                  <blockquote ng-if="!isRating(value)">
+                     <p>{{ interpretResponse(value) }}</p>
+                  </blockquote><br>
+                  <span uib-rating ng-if="isRating(value)" ng-model="value" max='5' readonly='true'>
+               </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="content">
+               <div ng-repeat="(key, value) in review.content">
+                  <h3>{{ propertyToQuestion(key) }}</h3>
+                  <blockquote ng-if="!isRating(value)">
+                     <p>{{ interpretResponse(value) }}</p>
+                  </blockquote><br>
+                  <span uib-rating ng-if="isRating(value)" ng-model="value" max='5' readonly='true'>
+               </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="effectiveness">
+               <div ng-repeat="(key, value) in review.effectiveness">
+                  <h3>{{ propertyToQuestion(key) }}</h3>
+                  <blockquote ng-if="!isRating(value)">
+                     <p>{{ interpretResponse(value) }}</p>
+                  </blockquote><br>
+                  <span uib-rating ng-if="isRating(value)" ng-model="value" max='5' readonly='true'>
+               </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="overall">
+                <div ng-repeat="(key, value) in review.overall">
+                  <h3>{{ propertyToQuestion(key) }}</h3>
+                  <blockquote ng-if="!isRating(value)">
+                     <p>{{ interpretResponse(value) }}</p>
+                  </blockquote><br>
+                  <span uib-rating ng-if="isRating(value)" ng-model="value" max='5' readonly='true'>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

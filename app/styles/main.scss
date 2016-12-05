@@ -1,0 +1,119 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+.blue-bg {
+   background-color: #000232;
+}
+
+.software-thumb {
+   height: 200px;
+   width: 200px;
+}
+
+.software-page-img {
+   max-width: 200px;
+   margin: 0 auto;
+}
+
+.software-description {
+   white-space: pre-wrap;       /* Since CSS 2.1 */
+   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+   white-space: -pre-wrap;      /* Opera 4-6 */
+   white-space: -o-pre-wrap;    /* Opera 7 */
+   word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.review-tile {
+   border: 1px solid black;
+   padding: 10px;
+   margin-bottom: 10px;
+   cursor: pointer;
+   transition: left 0.5s ease-in-out;
+   position: relative;
+   left: 0;
+   border-radius: 10px;
+}
+
+.review-tile:hover {
+   left: 10px;
+}
+
+.reviewer-name::first-letter {
+   text-transform: capitalize;
+}
+
+.dropdown {
+   margin-bottom: 1em;
+}
+
+.review-page {
+   blockquote {
+      background: #f9f9f9;
+      border-left: 10px solid #ccc;
+      margin: 1.5em 10px;
+      padding: 0.5em 10px;
+      quotes: "\201C""\201D""\2018""\2019";
+   }
+
+   blockquote:before {
+      color: #ccc;
+      content: '';
+      font-size: 4em;
+      line-height: 0.1em;
+      margin-right: 1em;
+      vertical-align: -0.4em;
+   }
+
+   blockquote:after {
+      content: '';
+   }
+
+   i.glyphicon-star, i.glyphicon-star-empty {
+      font-size: 20px;
+   }
+}
+
+.search-results-page {
+   .criteria {
+      border-right: 1px solid black;
+   }
+}
+
+.add-review-page {
+   padding-bottom: 3em;
+
+   .pro-con-label {
+      display: inline-block;
+      margin-right: 5px;
+   }
+
+   .tab-pane:not(.active) {
+      display: none;
+   }
+
+   .form-indent {
+      margin-left: 1em;
+      margin-top: 1em;
+
+      span {
+         margin-bottom: 1em;
+         font-size: 2em;
+      }
+
+      span:hover {
+         cursor: pointer;
+      }
+   }
+
+   .small-pane {
+      width: 700px;
+      position: relative;
+   }
+
+   .stick-right {
+      position: absolute;
+      right: 0;
+   }
+}

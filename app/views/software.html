@@ -1,0 +1,43 @@
+<div class="row">
+   <div class="col-lg-3">
+      <img ng-src="{{ software.meta.image }}" alt="" class="thumbnail-img software-page-img"><br><br><br>
+      <h6>Tags: </h6> <span>{{ software.meta.tags.join(", ") }}</span>
+   </div>
+   <div class="col-lg-9">
+      <h1>{{ software.meta.fullName }}</h1>
+      <pre class="software-description">{{ software.meta.description }}</pre>
+   </div>
+</div>
+<div class="row">
+   <hr>
+   <div class="col-lg-12">
+      <h1 class="text-center">Reviews</h1><br>
+      <h4 class="pull-left"><a class="btn btn-success" ui-sref="add({softwareName: software.meta.fullName })">Add Review</a></h4>
+      <div class="dropdown pull-right">
+         <button class="btn btn-default dropdown-toggle" type="button" id="software-sort-dropdown" data-toggle="dropdown">
+            Sort By...
+            <span class="caret"></span>
+         </button>
+         <ul class="dropdown-menu">
+            <li><a href="#" ng-click="sortBy = firstName">First Name</a></li>
+            <li><a href="#" ng-click="sortBy = lastName">Last Name</a></li>
+            <li><a href="#" ng-click="sortBy = dateAscending">Review Date (ascending)</a></li>
+            <li><a href="#" ng-click="sortBy = dateDescending">Review Date (descending)</a></li>
+         </ul>
+      </div>
+   </div>
+   <div class="row" ng-repeat="review in software.reviews | orderBy:sortBy">
+      <div class="col-lg-12">
+         <section class="review-tile" ui-sref="software({ softwareName: software.meta.fullName, reviewId: $index })">
+            <div class="col-lg-2">
+               <h3><strong class="reviewer-name">{{ review.meta.reviewerName }}</strong></h3> 
+               <h5><date>{{ review.meta.reviewDate | date:shortDate }}</date></h5><br>
+            </div>
+            <div class="col-lg-10">
+               <p>{{ review.general.review | limitTo: 300 }} ...</p>
+            </div>
+            <div class="clearfix"></div>
+         </section>
+      </div>
+   </div>
+</div>

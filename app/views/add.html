@@ -1,0 +1,175 @@
+<div class="row add-review-page">
+   <div class="col-lg-12">
+      <h1 class="text-center">Submit a Review</h1><br><br>
+      <ul class="nav nav-pills" role="tablist">
+         <li role="presentation" class="active" ng-class="{disabled: !this.hasClass('active')}"><a href="#" role="tab" tab-data="generalTab" data-toggle="tab" data-target="#general">General</a></li>
+         <li role="presentation" ng-class="{disabled: !this.hasClass('active')}"><a href="#" role="tab" tab-data="usageTab" data-toggle="tab" data-target="#usage">Usage</a></li>
+         <li role="presentation" ng-class="{disabled: !this.hasClass('active')}"><a href="#" role="tab" tab-data="contentTab" data-toggle="tab" data-target="#content">Content</a></li>
+         <li role="presentation" ng-class="{disabled: !this.hasClass('active')}"><a href="#" role="tab" tab-data="effectivenessTab" data-toggle="tab" data-target="#effectiveness">Effectiveness</a></li>
+         <li role="presentation" ng-class="{disabled: !this.hasClass('active')}"><a href="#" role="tab" tab-data="overallTab" data-toggle="tab" data-target="#overall">Overall</a></li>
+      </ul>
+
+      <div class="tab-content">
+         <div role="tabpanel" class="tab-pane fade in active" id="general" ng-form name="SubmitReview">
+            <br>
+            <div class="form-group" ng-class="{'has-error': SubmitReview.nameInput.$invalid, 'has-success': SubmitReview.nameInput.$valid }">
+               <input type="text" name="nameInput" class="form-control" placeholder="What is your name?" ng-model="newReview.meta.reviewerName" required>
+            </div>
+            <div class="form-group" ng-class="{'has-error': SubmitReview.reviewInput.$invalid, 'has-success': SubmitReview.reviewInput.$valid }">
+               <textarea class="form-control" name="reviewInput" rows="5" placeholder="Detail your review here" ng-model="newReview.general.review" required></textarea>
+            </div>
+            <div class="form-group form-inline pros-cons" ng-class="{'has-error': newReview.general.pros.length == 0, 'has-success': newReview.general.pros.length > 0 }">
+               <button type="button" class="btn btn-default" ng-click="removePro()"><span class="glyphicon glyphicon-minus"></span></button>
+               <input type="text" class="form-control" ng-model="proInput" placeholder="Pro's">
+               <button type="button" class="btn btn-default" ng-click="addPro()"><span class="glyphicon glyphicon-plus"></span></button>
+               <p class="label label-info pro-con-label" ng-repeat="pros in newReview.general.pros track by $index">{{ pros }}<p>
+            </div>
+            <div class="form-group form-inline pros-cons" ng-class="{'has-error': newReview.general.cons.length == 0, 'has-success': newReview.general.cons.length > 0 }">
+               <button type="button" class="btn btn-default" ng-click="removeCon()"><span class="glyphicon glyphicon-minus"></span></button>
+               <input type="text" class="form-control" ng-model="conInput" placeholder="Cons's">
+               <button type="button" class="btn btn-default" ng-click="addCon()"><span class="glyphicon glyphicon-plus"></span></button>
+               <p class="label label-info pro-con-label" ng-repeat="cons in newReview.general.cons track by $index">{{ cons }}<p>
+            </div>
+            <br><br>
+            <button type="button" class="btn btn-default pull-right" id="next-button-1">Next</button>
+         </div>
+         <div role="tabpanel" class="tab-pane fade" id="usage">
+            <h3 class="text-center">Please rate the following about your software (optional)</h3>
+            <br>
+            <br>
+            <div class="form-group form-indent small-pane">
+                  Illogical Input?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.usage.illogical_input"></span>
+                  <br><br>
+                  Repeated incorrect responses?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.usage.repeated_incorrect_responses"></span>
+                  <br><br>
+                  Starting it up?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.usage.starting_it_up"></span>
+                  <br><br>
+                  Closing the program?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.usage.closing_the_program"></span>
+                  <br><br>
+                  Adjusting the sound?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.usage.adjusting_the_sound"></span>
+                  <br><br>
+                  User friendly (minimal technical expertise required to use this)?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.usage.user_friendly"></span>
+                  <br><br>
+                  Help screens/documentation?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.usage.help_screens"></span>
+                  <br><br>
+                  Instructions easily accessible?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.usage.instructions_easily_accessible"></span>
+                  <br><br>
+                  Program operates without crashing?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.usage.program_operates_without_crashing"></span>
+            </div>
+            <br><br>
+            <button type="button" class="btn btn-default pull-right" id="next-button-2">Next</button>
+            <button type="button" class="btn btn-default pull-left" id="back-button-2">Back</button>
+         </div>
+         <div role="tabpanel" class="tab-pane fade" id="content">
+            <h3 class="text-center">Please rate the following about your software (optional)</h3>
+            <br>
+            <br>
+            <div class="form-group form-indent small-pane">
+                  Correct grammar on the screen?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.content.correct_grammar_on_the_screen"></span>
+                  <br><br>
+                  Correct spelling on the screen?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.content.correct_spelling_on_the_screen"></span>
+                  <br><br>
+                  Avoids stereotypes?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.content.avoids_stereotypes"></span>
+                  <br><br>
+                  Has clear graphics?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.content.has_clear_graphics"></span>
+                  <br><br>
+                  Graphics are age appropriate?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.content.graphics_are_age_appropriate"></span>
+                  <br><br>
+                  Content is accurate?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.content.content_is_accurate"></span>
+                  <br><br>
+                  Motivates the student?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.content.motivates_the_student"></span>
+                  <br><br>
+                  Instructions are clear?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.content.instructions_are_clear"></span>
+                  <br><br>
+                  Help messages are easily comprehended?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.content.help_messages_are_easily_comprehended"></span>
+            </div>
+            <br><br>
+            <button type="button" class="btn btn-default pull-right" id="next-button-3">Next</button>
+            <button type="button" class="btn btn-default pull-left" id="back-button-3">Back</button>
+         </div>
+         <div role="tabpanel" class="tab-pane fade" id="effectiveness">
+            <h3 class="text-center">Please rate the following about your software (optional)</h3>
+            <br>
+            <br>
+            <div class="form-group form-indent small-pane">
+                  How clear is the objective of the software?                  
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.effectiveness.how_clear_is_the_objective_of_the_software"></span>
+                  <br><br>
+                  How clear are the learning strategies?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.effectiveness.how_clear_are_the_learning_strategies"></span>
+                  <br><br>
+                  How are the number of examples?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.effectiveness.how_are_the_number_of_examples"></span>
+                  <br><br>
+                  How well does the software allow the student to practice?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.effectiveness.how_well_does_the_software_allow_the_student_to_practice"></span>
+                  <br><br>
+                  How well does the software correct the students errors?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.effectiveness.how_well_does_the_software_correct_the_students_errors"></span>
+                  <br><br>
+                  How well does the software analyze and present the student's errors?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.effectiveness.how_well_does_the_software_analyze_and_present_the_students_errors"></span>
+                  <br><br>
+                  How clear is the software's font and font size?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.effectiveness.how_clear_is_the_softwares_font_and_font_size"></span>
+                  <br><br>
+                  How customizable is the software?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.effectiveness.how_customizable_is_the_software"></span>
+                  <br><br>
+                  How well does the software monitor the student's progress?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.effectiveness.how_well_does_the_software_monitor_the_students_progress"></span>
+                  <br><br>
+                  How well does the software engage the student?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.effectiveness.how_well_does_the_software_engage_the_student"></span>
+                  <br><br>
+                  How clear is the software's navigation?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.effectiveness.how_clear_is_the_softwares_navigation"></span>
+                  <br><br>
+                  How would you rate the software's use of visual/auditory stimuli?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.effectiveness.softwares_use_of_visual_auditory_stimuli"></span>
+            </div>
+            <br><br>
+            <button type="button" class="btn btn-default pull-right" id="next-button-4">Next</button>
+            <button type="button" class="btn btn-default pull-left" id="back-button-4">Back</button>
+         </div>
+         <div role="tabpanel" class="tab-pane fade" id="overall">
+            <br>
+            <br>
+            <div class="form-group form-indent small-pane">
+                  How cost effective is the software?
+                  <span class="stick-right" uib-rating max='5' readonly='false' state-on="'glyphicon glyphicon-heart'" state-off="'glyphicon glyphicon-heart-empty'" ng-model="newReview.overall.how_cost_effective_is_the_software"></span>
+                  <br><br>
+            </div>
+            <div class="form-group form-indent small-pane">
+               <textarea class="form-control" placeholder="Additional comments for your review:" ng-model="newReview.overall.additional_comments" required></textarea>
+            </div>
+            <div class="form-group form-indent small-pane">
+               <textarea class="form-control" placeholder="Comments on ease of use" ng-model="newReview.overall.comments_on_ease_of_use" required></textarea>
+            </div>
+            <div class="form-group form-indent small-pane">
+               <textarea class="form-control" placeholder="Comments on general effectiveness" ng-model="newReview.overall.comments_on_general_effectiveness" required></textarea>
+            </div>
+            <br><br>
+            <button type="button" class="btn btn-default pull-right" id="submit-review-button" ng-click="submitReview()">Submit</button>
+            <button type="button" class="btn btn-default pull-left" id="back-button-5">Back</button>
+         </div>
+   </div>
+</div>
