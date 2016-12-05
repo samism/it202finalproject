@@ -10,3 +10,4 @@ search - although incomplete, this view will be able to search through reviews a
 
 Finally, there is a constant portion on top of every view for navigating home, to my work's website, and the search functionality.
 
+Run with: grunt serve
