@@ -5,8 +5,9 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('*', function (req, res) {
-  console.log("home page: " + __dirname + '/index.html');
-  res.sendFile(__dirname + '/index.html');
+  var homepath = __dirname.slice(0, __dirname.indexOf("it202finalproject") + 17) + "/app";
+  console.log("home page: " + homepath);
+  res.sendFile(homepath + '/index.html');
 });
 
 module.exports = router;
