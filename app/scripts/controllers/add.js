@@ -101,14 +101,14 @@ angular.module('reviewSystemApp')
          //traverse software until one specified in url is found
           angular.forEach($scope.data, function(key) {
             if(decodeURI(key.meta.fullName) === $stateParams.softwareName) {
-              console.log(key.meta.fullName + " started with " + key.reviews.length);
+              console.log(key.meta.fullName + " started with " + key.reviews.length || 0);
 
               //push this new review object to this array
               key.reviews.push($scope.newReview);
 
               //save to firebase
               $scope.data.$save().then(function(res) {
-                console.log(key.meta.fullName + " now has " + key.reviews.length);
+                console.log(key.meta.fullName + " now has " + key.reviews.length || 0);
                 $state.go('software', {'softwareName': $stateParams.softwareName}); //redirect page
               }, function(error) {
                 console.log("Error: ", error);
