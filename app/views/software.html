@@ -27,7 +27,7 @@
       </div>
    </div>
    <div class="row" ng-repeat="review in software.reviews | orderBy:sortBy">
-      <div class="col-lg-12">
+      <div class="col-lg-12" ng-if="review.general.review">
          <section class="review-tile" ui-sref="software({ softwareName: software.meta.fullName, reviewId: $index })">
             <div class="col-lg-2">
                <h3><strong class="reviewer-name">{{ review.meta.reviewerName }}</strong></h3> 
