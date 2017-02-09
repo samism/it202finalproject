@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="text-center">Add a New Software Title</h1><br><br>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="softwareName" class="col-lg-2 control-label">Full Name</label>
+                <div class="col-lg-6">
+                <input type="text" class="form-control" id="softwareName" ng-model="softwareName" placeholder="Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="softwareVersion" class="col-lg-2 control-label">Version Number</label>
+                <div class="col-lg-2">
+                <input type="text" class="form-control" id="softwareVersion" ng-model="softwareVersion" placeholder="2.0">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="softwareImageURL" class="col-lg-2 control-label">Image URL</label>
+                <div class="col-lg-10">
+                <input type="text" class="form-control" id="softwareImageURL" ng-model="softwareImageURL" placeholder="Image URL">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="softwareTags" class="col-lg-2 control-label">Tags (comma seperated)</label>
+                <div class="col-lg-10">
+                <input type="text" class="form-control" id="softwareTags" ng-model="softwareTags" placeholder="elementary, high school, college, middle school">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="softwareDescription" class="col-lg-2 control-label">Description</label>
+                <div class="col-lg-10">
+                <textarea class="form-control" id="softwareDescription" ng-model="softwareDescription" placeholder="Brief Description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                <button type="button" class="btn btn-default" ng-click="addSoftware()">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -101,6 +101,12 @@ angular.module('reviewSystemApp')
       url: '/404',
       templateUrl: '/404.html'
     });
+
+    $stateProvider.state('add-software', {
+      url: '/add-software',
+      templateUrl: 'views/add-software.html',
+      controller: 'AddSoftwareController'
+    });
   }])
 
   /**
