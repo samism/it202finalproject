@@ -2,12 +2,12 @@
   "name": "reviewsystem",
   "version": "0.0.0",
   "dependencies": {
+    "angular": "^1.4.0",
     "angularfire": "^2.0.2",
     "bower": "^1.7.9",
     "font-awesome": "^4.7.0",
     "grunt": "^1.0.1",
-    "grunt-cli": "^1.2.0",
-    "angular": "^1.4.0"
+    "grunt-cli": "^1.2.0"
   },
   "repository": {},
   "devDependencies": {

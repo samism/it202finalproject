@@ -12,6 +12,26 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
    width: 200px;
 }
 
+.delete-icon {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 60px;
+    right: 55px;
+    color: red;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 20px;
+    transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+
+.delete-thumbnail:hover .delete-icon {
+    display: block;
+    cursor: pointer;
+    visibility: visible;
+    opacity: 1;
+}
+
 .software-page-img {
    max-width: 200px;
    margin: 0 auto;

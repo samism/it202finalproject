@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="softwareImageURL" class="col-lg-2 control-label">Image URL</label>
+                <label for="softwareImageURL" class="col-lg-2 control-label">Image URL (jpg, png, gif, etc)</label>
                 <div class="col-lg-10">
                 <input type="text" class="form-control" id="softwareImageURL" ng-model="softwareImageURL" placeholder="Image URL">
                 </div>
@@ -38,5 +38,12 @@
                 </div>
             </div>
         </form>
+        <h1 class="text-center">Delete a Software Title</h1>
+        <h6 class="text-center">Will delete instantly and permanently. Use caution.</h6>
+        <br><br>
+        <div class="col-lg-2 delete-thumbnail" ng-repeat="program in data">
+            <img class="img-thumbnail software-thumb" ng-src="{{ program.meta.image }}">
+            <i class="fa fa-trash fa-5x delete-icon" ng-click="removeSoftware(program.meta.fullName)" aria-hidden="true"></i>
+      </div>
     </div>
 </div>

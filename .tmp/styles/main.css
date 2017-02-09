@@ -8712,12 +8712,34 @@ button.close {
 }
 
 /* line 15, ../../app/styles/main.scss */
+.delete-icon {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 60px;
+  right: 55px;
+  color: red;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 20px;
+  transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+
+/* line 28, ../../app/styles/main.scss */
+.delete-thumbnail:hover .delete-icon {
+  display: block;
+  cursor: pointer;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* line 35, ../../app/styles/main.scss */
 .software-page-img {
   max-width: 200px;
   margin: 0 auto;
 }
 
-/* line 20, ../../app/styles/main.scss */
+/* line 40, ../../app/styles/main.scss */
 .software-description {
   white-space: pre-wrap;
   /* Since CSS 2.1 */
@@ -8731,7 +8753,7 @@ button.close {
   /* Internet Explorer 5.5+ */
 }
 
-/* line 28, ../../app/styles/main.scss */
+/* line 48, ../../app/styles/main.scss */
 .review-tile {
   border: 1px solid black;
   padding: 10px;
@@ -8743,22 +8765,22 @@ button.close {
   border-radius: 10px;
 }
 
-/* line 39, ../../app/styles/main.scss */
+/* line 59, ../../app/styles/main.scss */
 .review-tile:hover {
   left: 10px;
 }
 
-/* line 43, ../../app/styles/main.scss */
+/* line 63, ../../app/styles/main.scss */
 .reviewer-name::first-letter {
   text-transform: capitalize;
 }
 
-/* line 47, ../../app/styles/main.scss */
+/* line 67, ../../app/styles/main.scss */
 .dropdown {
   margin-bottom: 1em;
 }
 
-/* line 52, ../../app/styles/main.scss */
+/* line 72, ../../app/styles/main.scss */
 .review-page blockquote {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
@@ -8766,7 +8788,7 @@ button.close {
   padding: 0.5em 10px;
   quotes: "“" "”" "‘" "’";
 }
-/* line 60, ../../app/styles/main.scss */
+/* line 80, ../../app/styles/main.scss */
 .review-page blockquote:before {
   color: #ccc;
   content: '';
@@ -8775,56 +8797,54 @@ button.close {
   margin-right: 1em;
   vertical-align: -0.4em;
 }
-/* line 69, ../../app/styles/main.scss */
+/* line 89, ../../app/styles/main.scss */
 .review-page blockquote:after {
   content: '';
 }
-/* line 73, ../../app/styles/main.scss */
+/* line 93, ../../app/styles/main.scss */
 .review-page i.glyphicon-star, .review-page i.glyphicon-star-empty {
   font-size: 20px;
 }
 
-/* line 79, ../../app/styles/main.scss */
+/* line 99, ../../app/styles/main.scss */
 .search-results-page .criteria {
   border-right: 1px solid black;
 }
 
-/* line 84, ../../app/styles/main.scss */
+/* line 104, ../../app/styles/main.scss */
 .add-review-page {
   padding-bottom: 3em;
 }
-/* line 87, ../../app/styles/main.scss */
+/* line 107, ../../app/styles/main.scss */
 .add-review-page .pro-con-label {
   display: inline-block;
   margin-right: 5px;
 }
-/* line 92, ../../app/styles/main.scss */
+/* line 112, ../../app/styles/main.scss */
 .add-review-page .tab-pane:not(.active) {
   display: none;
 }
-/* line 96, ../../app/styles/main.scss */
+/* line 116, ../../app/styles/main.scss */
 .add-review-page .form-indent {
   margin-left: 1em;
   margin-top: 1em;
 }
-/* line 100, ../../app/styles/main.scss */
+/* line 120, ../../app/styles/main.scss */
 .add-review-page .form-indent span {
   margin-bottom: 1em;
   font-size: 2em;
 }
-/* line 105, ../../app/styles/main.scss */
+/* line 125, ../../app/styles/main.scss */
 .add-review-page .form-indent span:hover {
   cursor: pointer;
 }
-/* line 110, ../../app/styles/main.scss */
+/* line 130, ../../app/styles/main.scss */
 .add-review-page .small-pane {
   width: 700px;
   position: relative;
 }
-/* line 115, ../../app/styles/main.scss */
+/* line 135, ../../app/styles/main.scss */
 .add-review-page .stick-right {
   position: absolute;
   right: 0;
 }
-
-/*# sourceMappingURL=main.css.map */

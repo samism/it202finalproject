@@ -69,4 +69,12 @@ angular.module('reviewSystemApp')
             $state.go('main');
         });
     };
+
+    $scope.removeSoftware = function(softwareName) {
+        delete $scope.data[softwareName];
+        $scope.data.$save().then(function() {
+            console.log(softwareName + " deleted.");
+            $state.go('add-software');
+        });
+    };
 }]);
