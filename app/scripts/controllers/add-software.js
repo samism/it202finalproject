@@ -16,6 +16,10 @@ angular.module('reviewSystemApp')
                 "version" : $scope.softwareVersion
             },
             "reviews" : [{
+                "meta" : {
+                    "reviewDate" : new Date().toISOString(),
+                    "reviewerName" : "test" //required
+                },
                 "content" : {
                     "avoids_stereotypes" : 0,
                     "content_is_accurate" : 0,
@@ -42,6 +46,8 @@ angular.module('reviewSystemApp')
                     "softwares_use_of_visual_auditory_stimuli" : 0
                 },
                 "general" : {
+                    "cons" : [], //required
+                    "pros" : [], //required
                     "review" : ""
                 },
                 "overall" : {

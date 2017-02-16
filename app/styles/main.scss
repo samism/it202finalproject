@@ -137,3 +137,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
       right: 0;
    }
 }
+
+
+.fade.ng-leave {
+  transition: visibility 2s linear, opacity 2s linear;
+  opacity: 1;
+  visibility: visible;
+}
+.fade.ng-leave-active {
+  opacity: 0;
+  visibility: hidden;
+}

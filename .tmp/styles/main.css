@@ -8848,3 +8848,18 @@ button.close {
   position: absolute;
   right: 0;
 }
+
+/* line 142, ../../app/styles/main.scss */
+.fade.ng-leave {
+  transition: visibility 2s linear, opacity 2s linear;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* line 147, ../../app/styles/main.scss */
+.fade.ng-leave-active {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*# sourceMappingURL=main.css.map */
