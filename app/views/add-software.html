@@ -41,7 +41,7 @@
         <h1 class="text-center">Delete a Software Title</h1>
         <h6 class="text-center">Will delete instantly and permanently. Use caution.</h6>
         <br><br>
-        <div class="col-lg-2 delete-thumbnail fade" ng-repeat="program in data" ng-animate="'animate'">
+        <div class="col-lg-2 delete-thumbnail" ng-repeat="program in data" ng-animate="'animate'">
             <img class="img-thumbnail software-thumb" ng-src="{{ program.meta.image }}">
             <i class="fa fa-trash fa-5x delete-icon" ng-click="removeSoftware(program.meta.fullName)" aria-hidden="true"></i>
       </div>
